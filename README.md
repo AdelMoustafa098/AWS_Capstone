@@ -43,7 +43,7 @@ Below are sample images from the data set.
 ![](images/benign%20(1).png) 
 
 ### Access
-Data access is divided into five parts and it can be found on this [link]():
+Data access is divided into five parts and it can be found on this [link](https://drive.google.com/file/d/1Vd5PTfyhK_rIwEJKqjWTXkgT3LAUpAiO/view?usp=drivesdk):
 1. Upload the raw data as a zip file to the AWS S3 bucket.
 2. Download the data from the S3 bucket and unzip it.
 3. Structuring the data folders according to each task (Classification and Segmentation)
@@ -113,7 +113,7 @@ I used a pre-trained `RESNET50` model from PyTorch and fine-tuned it. ResNet sta
 
 
 2. Segmentation:    
-for the segmentation task, I wanted to build a U-net from scratch and train it with `Breast Cancer Data` but I came across a problem that I could not solve, and to keep things going I managed to find a dataset and trained the U-net using [Electron Microscopy Dataset](https://www.kaggle.com/datasets/kmader/electron-microscopy-3d-segmentation) which I trained locally (to download the saved model click [here]()). after that, I used the trial model to segment my `Breast Cancer Data`.   
+for the segmentation task, I wanted to build a U-net from scratch and train it with `Breast Cancer Data` but I came across a problem that I could not solve, and to keep things going I managed to find a dataset and trained the U-net using [Electron Microscopy Dataset](https://www.kaggle.com/datasets/kmader/electron-microscopy-3d-segmentation) which I trained locally (to download the saved model click [here](https://drive.google.com/file/d/1QGCv1rgZB6ZhL2GDGc7DGWH5PIXcja-z/view?usp=drivesdk)). after that, I used the trial model to segment my `Breast Cancer Data`.   
 
     The U-net is a convolutional network architecture for fast and precise segmentation of images. Up to now, it has outperformed the prior best method (a sliding-window convolutional network). It consists of a contracting path and an expansive path. The contracting path follows the typical architecture of a convolutional network. It consists of the repeated application of two 3x3 convolutions (unpadded convolutions), each followed by a rectified linear unit (ReLU) and a 2x2 max pooling operation with stride 2 for downsampling. At each downsampling step, we double the number of feature channels. Every step in the expansive path consists of an upsampling of the feature map followed by a 2x2 convolution (“up-convolution”) that halves the number of feature channels, a concatenation with the correspondingly cropped feature map from the contracting path, and two 3x3 convolutions, each followed by a ReLU. The cropping is necessary due to the loss of border pixels in every convolution. At the final layer, a 1x1 convolution is used to map each 64-component feature vector to the desired number of classes. In total the network has 23 convolutional layers.
 
