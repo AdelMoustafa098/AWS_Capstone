@@ -85,7 +85,9 @@ def net():
     function that initializes your model
     '''
     # use a pretrained resnet50 model
-    model = models.resnet50(pretrained = True) 
+    # model = models.resnet50(pretrained = True) 
+    # use a pretrained resnet101 model
+    model = models.resnet101(pretrained = True)
     for param in model.parameters():
         param.requires_grad = False 
         
